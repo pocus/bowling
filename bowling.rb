@@ -7,8 +7,9 @@ class Game
 
 		while frame <= 9
 				if roll_ary[i] == 10 #strike
-					frame_score_ary[frame] = roll_ary[i].to_i + roll_ary[i+1].to_i  + roll_ary[i+2].to_i
+					frame_score_ary[frame] = roll_ary[i] + roll_ary[i+1]  + roll_ary[i+2]
 					i += 1 if frame < 9
+
 				elsif roll_ary[i] == 0 #gutter
 					frame_score_ary[frame] = 0
 					i += 1 if frame < 9
@@ -20,6 +21,7 @@ class Game
 		 		elsif (roll_ary[i] + roll_ary[i+1] == 10) #spare
 		 			frame_score_ary[frame] = roll_ary[i] + roll_ary[i+1] + roll_ary[i+2]
 		 			i += 2 if frame < 9
+
 				end
 			frame += 1
 		end
